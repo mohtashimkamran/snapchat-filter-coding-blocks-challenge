@@ -39,7 +39,7 @@ mustache = cv.imread('mustache.png',-1)
 eye = eye_cascade.detectMultiScale(gray, 1.1, 5)
 for x,y,w,h in eye:
 	# cv.rectangle(img, (x,y), (x+w,y+h), (255,0,0), 2)
-	glasses = cv.resize(glasses, (h,w))
+	glasses = cv.resize(glasses, (w,h))
 	overlay_image_alpha(img, glasses[:,:,0:3], (x,y), glasses[:,:,3]/255.0)
 	
 nose = nose_cascade.detectMultiScale(gray, 1.1, 5)
